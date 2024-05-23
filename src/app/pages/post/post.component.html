@@ -1,0 +1,15 @@
+
+
+<h3>Varios-Posts:</h3>
+<ul>
+    <li *ngFor="let post of posts">
+        <strong (click)="verdetalles(post)">{{ post.title }}</strong>
+        <div *ngIf="post.mostrarDetalles">
+            <p><strong>User ID:</strong> {{ post.userId }}</p>
+            <p><strong>ID:</strong> {{ post.id }}</p>
+            <p>Body: {{ post.body }}</p>
+        </div>
+    </li>
+
+    
+</ul>

@@ -1,0 +1,46 @@
+<<h2>Calculadora:</h2>
+
+<!-- Sección "Calculadora Dinámica" -->
+<div [hidden]="!showCalculator" class="ccalculator-container">
+  <div class="display">
+    <input type="text" class="result" id="result" [value]="displayValue" disabled />
+  </div>
+
+  <div class="button-row">
+    <button class="button" (click)="clearDisplay()">C</button>
+    <button class="button" (click)="backspaceKey()">←</button>
+    <button class="button" (click)="changeSignValue()">+/-</button>
+    <button class="button operation" (click)="divideValue()">/</button>
+  </div>
+  <div class="button-row">
+    <button class="button" (click)="appendNumber(7)">7</button>
+    <button class="button" (click)="appendNumber(8)">8</button>
+    <button class="button" (click)="appendNumber(9)">9</button>
+    <button class="button operation" (click)="multiplyValue()">x</button>
+  </div>
+  <div class="button-row">
+    <button class="button" (click)="appendNumber(4)">4</button>
+    <button class="button" (click)="appendNumber(5)">5</button>
+    <button class="button" (click)="appendNumber(6)">6</button>
+    <button class="button operation" (click)="subtractValue()">-</button>
+  </div>
+  <div class="button-row">
+    <button class="button" (click)="appendNumber(1)">1</button>
+    <button class="button" (click)="appendNumber(2)">2</button>
+    <button class="button" (click)="appendNumber(3)">3</button>
+    <button class="button operation" (click)="addValue()">+</button>
+  </div>
+  <div class="button-row">
+    <button class="button" (click)="appendNumber(0)">0</button>
+    <button class="button" (click)="addDecimalPoint()">.</button>
+    <button class="button" (click)="calculateResult()">=</button>
+  </div>
+</div>
+<br>
+
+<br>
+
+<h2>Historial:</h2>
+
+
+

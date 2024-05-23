@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "demo64progra": {
+      "hosting": {
+        "demo64": [
+          "demo64progra"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "demo64progra"
+  }
+}

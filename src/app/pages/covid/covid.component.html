@@ -1,0 +1,50 @@
+<p><strong>Datos estadísticos sobre:</strong> COVID-19</p>
+
+<div>
+  <label for="countrySelect">Selecciona el país: </label>
+  <select id="countrySelect" (change)="onCountryChange($event)">
+    <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+  </select>
+</div>
+
+<div *ngIf="covidData">
+  <ul>
+    <li><strong>Datos Nacionales de COVID-19 de:</strong> {{ covidData.country }}</li>
+    <li><strong>Fecha:</strong> {{ covidData.lastUpdatedApify }}</li>
+    <li><strong>Casos positivos:</strong> {{ covidData.infected }}</li>
+    <li><strong>Casos negativos:</strong> {{ covidData.tested }}</li>
+    <li><strong>Recuperados:</strong> {{ covidData.recovered }}</li>
+    <li><strong>Muertes:</strong> {{ covidData.deceased }}</li>
+    <li><strong>Más información:</strong> <a [href]="covidData.moreData">Click here</a></li>
+    <li><strong>Datos históricos:</strong> <a [href]="covidData.historyData">Click here</a></li>
+    <li><strong>Fuente:</strong> <a [href]="covidData.sourceUrl">Click here</a></li>
+  </ul>
+  <button (click)="saveCovidData()">Guardar en Firebase</button>
+</div>
+
+<div *ngIf="savedCovidData.length">
+  <h3>Datos guardados en Firebase</h3>
+  <ul>
+    <li *ngFor="let data of savedCovidData">
+      {{ data.country }} - {{ data.lastUpdatedApify }}
+    </li>
+  </ul>
+</div>
+
+
+
+  
+
+
+
+  <br>
+  <br>
+  
+  
+  
+  
+  
+  
+  
+
+  

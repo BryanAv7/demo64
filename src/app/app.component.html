@@ -177,6 +177,9 @@
   }
 </style>
 
+<app-header [usuario]="user" ></app-header>
+<main class="main">
+
 <main class="main">
   <div class="content">
     <div class="left-side">
@@ -225,25 +228,40 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <h1>Mis primer proyecto, {{ title }}</h1>
+      <p>Hola mundo!</p><br>
+
+      <router-outlet />
+
+<div class="contenedor">
+  <h2>Operación: Suma</h2>
+  <input type="number" [(ngModel)]="numero1">
+  <input type="number" [(ngModel)]="numero2">
+  
+  <button (click)="sumar()">Sumar</button>
+  
+  <p>Resultado: {{ resultado }}</p>
+</div>
+<br>
+
+      
+
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <div class="pill-group">
         @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
+          { title: 'Suma', link: 'Suma' },
+          { title: 'Resta', link: 'Resta' },
+          { title: 'Multiplicación', link: 'multiplica' },
+          { title: 'División', link: 'divide' },
+          { title: 'Calculadora', link: 'Calculadora' },
+          { title: 'posts', link: 'posts' },
+          { title: 'mensajes', link: 'mensajes' },
+          {title: 'covid', link: 'covid' }
         ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
+          <a class="pill" [routerLink]="item.link">
             <span>{{ item.title }}</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -333,4 +351,4 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 
-<router-outlet />
+
